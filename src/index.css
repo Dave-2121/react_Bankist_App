@@ -1,13 +1,323 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans&family=Poppins&family=Roboto&display=swap");
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: radial-gradient(
+    circle,
+    #00bedb,
+    #00aede,
+    #009cdf,
+    #0088dc,
+    #2c73d2
+  );
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 3rem;
+  font-size: 13px;
+}
+.navbar h1 {
+  color: #004298;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: default;
+}
+
+.navbar img {
+  height: 60px;
+}
+
+.navbar div {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar input {
+  border: none;
+  color: #4b4453;
+  background: #fbeaff;
+  font-weight: 400;
+  border-radius: 20px;
+  text-align: center;
+  width: 100px;
+  padding: 0.6rem 0;
+
+  transition: all 0.3s;
+}
+
+.navbar input:focus {
+  border: none;
+  outline: none;
+  transform: scale(96%);
+}
+
+.navbar button:active {
+  transform: scale(90%);
+}
+
+header {
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 30%;
+  cursor: default;
+}
+
+header .overlay {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
+}
+
+header h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 80px;
+  margin-bottom: 30px;
+}
+
+header h3 {
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 30px;
+}
+
+header div {
+  position: relative;
+  top: 20%;
+  left: -160px;
+}
+
+header img {
+  background: transparent;
+  position: absolute;
+  right: 100px;
+  top: -8px;
+}
+
+main {
+  margin: 3rem 3rem;
+  padding: 1rem 7.5rem;
+  display: grid;
+  grid-template-columns: 600px 430px;
+  grid-template-rows: 80px 200px 200px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+
+.movements {
+  overflow: scroll;
+  background: #f6f9ff;
+  grid-row: 2 / span 3;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 590px;
+}
+.movements .movements-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #95a7dd;
+}
+
+.movements-item .wd {
+  padding: 0.3rem;
+  font-size: 12px;
+  border-radius: 12px;
+  color: #f6f9ff;
+  font-weight: 500;
+  /* linear-gradient(to top left, #e52a5a, #ff585f) */
+}
+
+.green {
+  background: linear-gradient(to top left, #39b385, #9be15d);
+}
+.red {
+  background: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.transfer-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+
+  color: #e6f4f1;
+  grid-column: 2;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 2.3rem 1rem;
+}
+
+.transfer-box input {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+.transfer-box input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.transfer-box h2 {
+  text-shadow: 2px 2px #00000025;
+}
+.transfer-box-inside div span {
+  color: #424656;
+  text-align: center;
+}
+
+.transfer-box-inside {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.transfer-box-inside div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.transfer-box-inside button {
+  margin-bottom: 25px;
+  padding: 0 5px;
+  border: none;
+}
+
+.summary {
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+  grid-column: 1 / span 2;
+}
+
+.summary__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+  color: rgb(10, 72, 83);
+}
+
+.summary__value--in,
+.summary__value--interest {
+  color: #c0ecc6;
+}
+
+.summary__value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.summary__value--out {
+  color: #852020;
+}
+
+.Balance {
+  background: #424656;
+  color: #e6f4f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / span 2;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  /* box-shadow: 0 1rem 3rem 0.1rem rgb(59, 59, 59); */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.Balance p {
+  font-size: 24px;
+  margin-right: 14px;
+}
+
+.Balance div span {
+  color: #bbb;
+}
+
+.main-btn {
+  text-align: center;
+  grid-column: 2;
+  justify-self: center;
+  transition: all 0.3s;
+}
+.main-btn button {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.main-btn:hover {
+  transform: scale(103%);
+}
+
+select {
+  padding: 0.3rem;
+}
+
+.App {
+  position: relative;
+}
+
+.copyright,
+.copyright a {
+  color: #ebf6f7;
+}
+.copyright {
+  position: absolute;
+  right: 20px;
+  bottom: -70px;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.copyright a:hover {
+  opacity: 0.7;
+}
+
+.test-data {
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  right: 50px;
+  z-index: 11;
+  padding: 0.3rem;
+  border: transparent;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.data {
+  visibility: hidden;
+  position: absolute;
+  bottom: 50px;
+  right: 40px;
+  color: black;
+  z-index: 12;
+}
+
+.test-data:hover ~ .data {
+  visibility: visible;
 }
