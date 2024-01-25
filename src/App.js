@@ -9,6 +9,7 @@ import { TransferBox } from "./TransferBox";
 import { Summary } from "./Summary";
 import { Balance } from "./Balance";
 import { useState } from "react";
+import Timer from "./Timer";
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
@@ -74,6 +75,7 @@ export default function App() {
   const [recieverUserName, setRecUserName] = useState("");
   const [recieverAmount, setRecAmount] = useState("");
   const [loanAmount, setLoanAmount] = useState("");
+
   function onHandleLoan(e) {
     setLoanAmount(+e.target.value);
   }
@@ -230,6 +232,7 @@ export default function App() {
               <span>Logout</span>❌
             </AppButton>
           </div>
+          <Timer setShowMain={setShowMain} />
           <Summary curObj={curObj} handleSort={handleSort} sort={sort} />
         </Main>
       ) : (
